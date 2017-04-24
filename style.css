@@ -1,0 +1,136 @@
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'overpass', sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: red;
+    color: white;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: calc(1em + 5vw);
+    padding: 10vw 10vw 2vw 10vw;
+    margin: 0;
+}
+
+hr {
+    margin: 0 10vw;
+    border: 0.8vw solid white;
+}
+
+nav {
+    padding: 5vw 10vw;
+    display: flex;
+    align-items: baseline;
+    font-size: calc(1rem + 2vw);
+    font-weight: 700;
+}
+
+.nav-toggle {
+    background: transparent;
+    border: 5px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
+    font-size: inherit;
+    color: inherit;
+    margin-right: 5vw;
+    flex-shrink: 0;
+    transform: rotate(0deg);
+    cursor: pointer;
+    transition: background-color 300ms ease, color 300ms ease, transform 300ms ease;
+    outline: none;
+}
+
+.nav-toggle:hover {
+    background-color: white;
+    color: red;
+}
+
+.expanded .nav-toggle {
+    transform: rotate(180deg);
+}
+
+.designer-index {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -2.5vw;
+    overflow-y: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 300ms ease, max-height 300ms ease;
+}
+
+.expanded .designer-index {
+    max-height: 200vw;
+    opacity: 1;
+}
+
+.designer-index-section {
+    margin: 2.5vw;
+}
+
+.current-designer {
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+.expanded .current-designer {
+    opacity: 0.5;
+}
+
+.designer-index-designers {
+    margin: 0;
+    font-size: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+.designer-index-designers a {
+    text-decoration: none;
+    color: inherit
+}
+
+.designer-index-designers a:hover {
+    text-decoration: underline;
+}
+
+.designer {
+    transition-property: max-height, max-width;
+    transition-duration: 300ms, 300ms;
+    transition-timing-function: ease, ease;
+}
+
+figure {
+    margin: 0;
+    margin: 10vw 10vw 10vw calc(10vw + 5vw + 2*(1rem + 2vw));
+}
+
+figure img {
+    border: 1vw solid black;
+}
+
+figcaption {
+    font-size: calc(1rem + 1vw);
+}
+
+footer {
+    margin: 0 10vw 0 calc(10vw + 5vw + 2*(1rem + 2vw));
+    padding-left: 5vw;
+    padding-bottom: 5vw;
+    border-left: 0.8vw solid red;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+    font-weight: 600;
+}

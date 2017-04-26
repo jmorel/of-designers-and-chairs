@@ -14,8 +14,8 @@
         <header>
             <h1>Of Designers and Chairs</h1>
             <hr>
-            <nav>
-                <button class="nav-toggle">
+            <nav v-bind:class="{expanded: expanded}">
+                <button class="nav-toggle" v-on:click="expanded = !expanded">
                 <i class="fa fa-bars"></i>
             </button>
                 <div>

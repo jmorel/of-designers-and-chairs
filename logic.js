@@ -1,5 +1,7 @@
 'use strict';
 
+// Helpers
+
 var buildGetUrl = function (url, params) {
     var encodedParams = Object.keys(params).reduce(function (previousEncodedParams, paramName) {
         var paramValues = params[paramName];
@@ -16,8 +18,13 @@ var buildGetUrl = function (url, params) {
 
 var base_url = 'https://jmorel.opendatasoft.com/api';
 
+// Vue application
+
 new Vue({
     el: '#app',
+    data: {
+        expanded: false
+    },
     components: {
         'designer-index': {
             template: '' +
@@ -59,22 +66,3 @@ new Vue({
         }
     }
 });
-
-// Load designer index
-
-
-
-// Navigation
-
-var toggleElement = document.getElementsByClassName("nav-toggle")[0];
-var navElement = document.getElementsByTagName("nav")[0];
-
-toggleElement.addEventListener('click', function (event) {
-    console.log('click');
-    if (navElement.classList.contains('expanded')) {
-        navElement.classList.remove('expanded');
-    } else {
-        navElement.classList.add('expanded');
-    }
-});
-

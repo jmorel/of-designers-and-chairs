@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 18px;
 }
@@ -22,6 +26,7 @@ h1 {
 hr {
     margin: 0 10vw;
     border: 0.8vw solid white;
+    background: white;
 }
 
 nav {
@@ -77,6 +82,10 @@ nav {
 
 .designer-index-section {
     margin: 2.5vw;
+}
+
+.designer-index-section-title {
+    text-transform: uppercase;
 }
 
 .current-designer {

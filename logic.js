@@ -26,7 +26,7 @@ var buildGetUrl = function (url, params) {
 var app = new Vue({
     el: '#app',
     data: {
-        currentDesigner: window.location.hash.substr(1)
+        currentDesigner: decodeURIComponent(window.location.hash.substr(1))
     },
     components: {
         'navigation': {
@@ -136,5 +136,5 @@ var app = new Vue({
 // Routing
 
 window.addEventListener('hashchange', function () {
-    app.currentDesigner = window.location.hash.substr(1);
+    app.currentDesigner = decodeURIComponent(window.location.hash.substr(1));
 });

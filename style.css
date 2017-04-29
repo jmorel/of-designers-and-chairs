@@ -120,11 +120,11 @@ nav {
 
 figure {
     margin: 0;
-    margin: 10vw 10vw 10vw calc(10vw + 5vw + 2*(1rem + 2vw));
+    margin: 10vw;
 }
 
 figure img {
-    border: 1vw solid black;
+    max-width: 100%;
 }
 
 figcaption {
@@ -132,7 +132,7 @@ figcaption {
 }
 
 footer {
-    margin: 0 10vw 0 calc(10vw + 5vw + 2*(1rem + 2vw));
+    margin: 0 10vw 0 10vw;
     padding-left: 5vw;
     padding-bottom: 5vw;
     border-left: 0.8vw solid red;

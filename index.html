@@ -14,18 +14,11 @@
         <header>
             <h1>Of Designers and Chairs</h1>
             <hr>
-            <nav v-bind:class="{expanded: expanded}">
-                <button class="nav-toggle" v-on:click="expanded = !expanded">
-                <i class="fa fa-bars"></i>
-            </button>
-                <div>
-                    <div class="current-designer">Ludwig Mies van der Rohe</div>
-                    <designer-index></designer-index>
-            </nav>
+            <navigation v-bind:current-designer="currentDesigner"></navigation>
         </header>
 
         <main>
-            <chairs></chairs>
+            <chairs v-bind:current-designer="currentDesigner"></chairs>
         </main>
 
         <footer>
@@ -33,10 +26,10 @@
             <p><a href="https://jmorel.opendatasoft.com/explore/dataset/of-designers-and-chairs/">Source data</a></p>
             <p>Questions? Remarks? <a href="mailto:jeremy@hexagonal.io">Write</a> or <a href="https://twitter.com/jmorel_fr">Tweet</a>                me.</p>
         </footer>
-        </div>
+    </div>
 
-        <script src="https://unpkg.com/vue"></script>
-        <script src="logic.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="logic.js"></script>
 </body>
 
 </html>

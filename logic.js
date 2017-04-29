@@ -16,7 +16,8 @@ var buildGetUrl = function (url, params) {
     return url + '?' + encodedParams.join('&');
 };
 
-var base_url = 'https://jmorel.opendatasoft.com/api';
+var baseUrl = 'https://jmorel.opendatasoft.com';
+var datasetId = 'of-designers-and-chairs';
 
 // Vue application
 
@@ -45,12 +46,12 @@ new Vue({
                 }, {});
                 var that = this;
                 // fetch remote data
-                fetch(buildGetUrl(base_url + '/records/1.0/analyze/', {
-                    'dataset': 'of-designers-and-chairs',
+                fetch(buildGetUrl(baseUrl + '/api/records/1.0/analyze/', {
+                    'dataset': datasetId,
                     'x': ['last_name', 'full_name'],
                     'sort': 'x.last_name,x.full_name',
                     'y.serie1-1.func': 'COUNT'
-                }), { method: 'GET' })
+                }))
                     .then(function (response) {
                         return response.json();
                     })
@@ -62,6 +63,38 @@ new Vue({
                 return {
                     designerIndex: emptyDesignerIndex
                 }
+            }
+        },
+        'chairs': {
+            template: '' +
+            '<div>' +
+            '   <figure v-for="chairRecord in chairRecords">' +
+            '       <img v-bind:src="chairRecord.fields.chair_picture.url"' +
+            '            v-bind:alt="chairRecord.fields.chair_caption_text">' +
+            '       <figcaption v-html="chairRecord.fields.chair_caption_html"></figcaption>' +
+            '   </figure>' +
+            '</div>',
+            data: function () {
+                var chairRecords = [];
+                var that = this;
+
+                fetch(buildGetUrl(baseUrl + '/api//records/1.0/search', {
+                    'dataset': datasetId,
+                    'sort': 'last_name',
+                    'rows': 10000
+                }))
+                    .then(function (response) {
+                        return response.json()
+                    }).then(function (response) {
+                        response.records.forEach(function (record)  {
+                            record.fields.chair_picture.url = baseUrl + '/explore/dataset/' + datasetId + '/files/' + record.fields.chair_picture.id + '/300/';
+                        });
+                        that.chairRecords = response.records;
+                    });
+
+                return {
+                    chairRecords: chairRecords
+                };
             }
         }
     }

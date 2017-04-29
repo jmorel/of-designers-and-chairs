@@ -34,7 +34,7 @@ var app = new Vue({
             template: '' +
             '<nav v-bind:class="{expanded: expanded}">' +
             '   <button class="nav-toggle" v-on:click="expanded = !expanded">' +
-            '       <i class="fa fa-bars"></i>' +
+            '       <i class="icon-menu"></i>' +
             '   </button>' +
             '   <div>' +
             '       <div class="current-designer">{{ currentDesigner || \'Select a designer\' }}</div>' +

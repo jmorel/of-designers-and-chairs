@@ -46,9 +46,9 @@ var app = new Vue({
             '                       <a :href="\'#\' + designer">{{ designer }}</a>' +
             '                   </li>' +
             '               </ul>' +
+            '           </div>' +
             '       </div>' +
             '   </div>' +
-            '</div>' +
             '</nav>',
             data: function () {
                 return {

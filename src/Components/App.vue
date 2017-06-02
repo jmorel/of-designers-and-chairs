@@ -3,11 +3,11 @@
         <header>
             <h1>Of Designers and Chairs</h1>
             <hr>
-            <navigation v-bind:current-designer="currentDesigner"></navigation>
+            <navigation></navigation>
         </header>
 
         <main>
-            <chairs v-bind:current-designer="currentDesigner"></chairs>
+            <chairs></chairs>
         </main>
 
         <footer>
@@ -23,11 +23,6 @@ import Navigation from './Navigation.vue';
 import Chairs from './Chairs.vue';
 
 export default {
-    data: () => {
-        return {
-            currentDesigner: decodeURIComponent(window.location.hash.substr(1))
-        }
-    },
     components: {
         Navigation,
         Chairs

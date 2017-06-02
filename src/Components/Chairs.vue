@@ -9,15 +9,16 @@
 </template>
 
 <script>
-import {buildGetUrl, baseUrl, datasetId} from './utils';
+import {mapState} from 'vuex';
+import {buildGetUrl, baseUrl, datasetId} from '../utils';
 
 export default {
-    props: ['currentDesigner'],
     data: function () {
         return {
             chairRecords: []
         }
     },
+    computed: mapState(['currentDesigner']),
     created: function () {
         this.fetchImages();
     },

@@ -1,7 +1,7 @@
 const baseUrl = 'https://jmorel.opendatasoft.com';
 const datasetId = 'of-designers-and-chairs';
 
-var buildGetUrl = function (url, params) {
+var buildGetUrl  = (url, params) => {
 
     const encodedParams = Object.keys(params).reduce(function (previousEncodedParams, paramName) {
         var paramValues = params[paramName];
@@ -15,11 +15,6 @@ var buildGetUrl = function (url, params) {
     }, []);
     return url + '?' + encodedParams.join('&');
 };
-
-
-// window.addEventListener('hashchange', function () {
-//     app.currentDesigner = decodeURIComponent(window.location.hash.substr(1));
-// });
 
 
 export {

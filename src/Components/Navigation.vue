@@ -21,10 +21,10 @@
 
 <script>
 
-import {buildGetUrl, baseUrl, datasetId} from './utils';
+import {mapState} from 'vuex';
+import {buildGetUrl, baseUrl, datasetId} from '../utils';
 
 export default {
-    props: ['currentDesigner'],
     data: function () {
         return {
             designerIndex: 'abcdefghijklmnopqrstuvwxyz'
@@ -54,6 +54,7 @@ export default {
                 });
             });
     },
+    computed: mapState(['currentDesigner']),
     watch: {
         'currentDesigner': function () {
             this.expanded = false;

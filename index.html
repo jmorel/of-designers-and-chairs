@@ -11,27 +11,9 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app"></div>
 
-        <header>
-            <h1>Of Designers and Chairs</h1>
-            <hr>
-            <navigation v-bind:current-designer="currentDesigner"></navigation>
-        </header>
-
-        <main>
-            <chairs v-bind:current-designer="currentDesigner"></chairs>
-        </main>
-
-        <footer>
-            <p><em>Of Designers and chairs</em>, yet another somewhat useless project of <a href="http://hexagonal.io">Jérémy Morel</a>.</p>
-            <p>Questions? Remarks? <a href="mailto:jeremy@hexagonal.io">Write</a> or <a href="https://twitter.com/jmorel_fr">Tweet</a>                me.</p>
-            <p><a href="https://jmorel.opendatasoft.com/explore/dataset/of-designers-and-chairs/">Source data</a></p>
-        </footer>
-    </div>
-
-    <script src="vendor/vue-2.3.0/vue.min.js"></script>
-    <script src="app.js"></script>
+    <script src="dist/bundle.js"></script>
 </body>
 
 </html>

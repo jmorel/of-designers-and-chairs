@@ -1,0 +1,35 @@
+{
+  "name": "of-designers-and-chairs",
+  "version": "1.0.0",
+  "description": "A website showing picture of designers sitting in the chairs they designed.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmorel/of-designers-and-chairs.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmorel/of-designers-and-chairs/issues"
+  },
+  "homepage": "https://github.com/jmorel/of-designers-and-chairs#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.1",
+    "file-loader": "^0.11.1",
+    "vue-loader": "^12.1.0",
+    "vue-template-compiler": "^2.3.3",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "vue": "^2.3.3"
+  }
+}
